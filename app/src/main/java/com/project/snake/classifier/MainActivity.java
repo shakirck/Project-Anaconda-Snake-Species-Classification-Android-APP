@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
     private static final int INPUT_SIZE = 224;
     private static final int REQUEST_CAMERA = 0;
     private static final int REQUEST_CAMERA_PERMISSION = 1;
-    private static final String URL = "https://skin-cancer-app-test.herokuapp.com/predict";
+    private static final String URL = "https://snake-app-classify.herokuapp.com/predict";
     private Point mSize;
     private Bitmap bitmap;
     private ProgressDialog progressDialog;
