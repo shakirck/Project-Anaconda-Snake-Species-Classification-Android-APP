@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Snake Species Classifier</string>
+    <string name="waiting">Identifying, please wait...</string>
+    <string name="internet_connection">Cannot access the Remote server please check your internet connection</string>
+</resources>
