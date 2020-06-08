@@ -59,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
     private ProgressDialog progressDialog;
     private String url = "https://wizardly-cori-327eda.netlify.app/views/species?species=";
     Button viewMoreButton;
+    
 
 
     @Override
