@@ -21,6 +21,7 @@ import android.os.Bundle;
 import android.util.Base64;
 import android.view.Display;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -56,13 +57,17 @@ public class MainActivity extends AppCompatActivity {
     private Point mSize;
     private Bitmap bitmap;
     private ProgressDialog progressDialog;
+    private String url = "https://wizardly-cori-327eda.netlify.app/views/species?species=";
+    Button viewMoreButton;
+    
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        viewMoreButton = (Button)findViewById(R.id.button2);
+        viewMoreButton.setVisibility(View.GONE);
         Display display = getWindowManager().getDefaultDisplay();
         mSize = new Point();
         display.getSize(mSize);
@@ -114,6 +119,7 @@ public class MainActivity extends AppCompatActivity {
 
                     TextView predictionTextView = (TextView) findViewById(R.id.prediction);
                     predictionTextView.setText( snakeSpecies.get(0).getSnakenType());
+                    viewMoreButton.setVisibility(View.VISIBLE);
 
                     Intent intent = new Intent(MainActivity.this, ResultActivity.class);
                     intent.putExtra(" snakeSpecies",  snakeSpecies);
@@ -227,5 +233,9 @@ public class MainActivity extends AppCompatActivity {
                 bm, 0, 0, width, height, matrix, false);
 
         return resizedBitmap;
+    }
+    public  void open(View view){
+        Intent browserInent = new Intent(Intent.ACTION_VIEW,Uri.parse(url));
+        startActivity(browserInent);
     }
 }
