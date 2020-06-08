@@ -75,6 +75,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        url = "https://wizardly-cori-327eda.netlify.app/views/species?species=";
         if (resultCode != RESULT_OK) return;
 
         if (requestCode == REQUEST_CAMERA) {
@@ -120,7 +121,7 @@ public class MainActivity extends AppCompatActivity {
                     TextView predictionTextView = (TextView) findViewById(R.id.prediction);
                     predictionTextView.setText( snakeSpecies.get(0).getSnakenType());
                     viewMoreButton.setVisibility(View.VISIBLE);
-
+                    url +=  snakeSpecies.get(0).getSnakenType();
                     Intent intent = new Intent(MainActivity.this, ResultActivity.class);
                     intent.putExtra(" snakeSpecies",  snakeSpecies);
                     startActivity(intent);
